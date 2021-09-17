@@ -1,6 +1,6 @@
 ---
 # create new group, appservers, and install java
-- hosts: webservers  # Host or Group of Selections
+- hosts: localhost  # Host or Group of Selections
   gather_facts: true
   become: true
   vars:
@@ -31,7 +31,7 @@
     yum: pkg=mysql state=installed  # Using module ( doing the task )
   
 
-- hosts: appservers
+- hosts: localhost
   become: true
   tasks:
   - name: Install default-jdk
