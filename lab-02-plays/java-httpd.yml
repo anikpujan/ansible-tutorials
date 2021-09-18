@@ -6,12 +6,13 @@
   vars:
     httpd_port: 8080
   tasks:
-  
-  - apt:
-      pkg: apache2
+  - name: Install Apache
+    become: yes
+    apt:
+      name: apache2
       state: present
       update_cache: yes
-      become: yes
+      
 #     when: ansible_distribution == "Debian" 
 
 #   - yum:
