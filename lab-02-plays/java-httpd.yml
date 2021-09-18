@@ -7,11 +7,10 @@
     httpd_port: 8080
   tasks:
   - name: Install Apache
-    become: yes
+#     become: yes
     apt:
       name: apache2
       state: present
-      update_cache: yes
       
 #     when: ansible_distribution == "Debian" 
 
